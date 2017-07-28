@@ -1,0 +1,16 @@
+body {
+  background-color: darkgray;
+  margin: 10px;
+}
+
+#buttonsA {
+  border: solid 2px red;
+}
+
+#gifThumbs {
+  border: solid 2px green;
+}
+
+.addAnimal {
+  border: solid 2px blue;
+}
