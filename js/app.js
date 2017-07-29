@@ -6,6 +6,7 @@ $(document).ready(function() {
 var topic = ["dog", "cat", "bird", "fish", "sugar glider", "horse", "donkey", "panda"];
 
 
+
 function renderButtons() {                      //renderButton will display buttons for intial array set
   $("#buttonsA").empty();                       //empty out button div
 
@@ -26,4 +27,20 @@ $("#animalSubmit").on("click", function(event) {     //user inputs a NEW animal
   $("#put_animal").val("");
 
   renderButtons();
+
+  $("#put-animal").val("")      //~~~~~~~~~~~~~~~~clear out the input field for adding a new animal
 })
+
+
+//   $("#buttsonA").on("click", function) {
+//   var addAttribute = $(this).attr("animaData");
+//
+//   var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
+//         addAttribute + "&api_key=dc6zaTOxFJmzC&limit=10";
+//
+//         $.ajax({
+//             url: queryURL,
+//             method: "GET"
+//           }).done(function(response) {
+//
+// })
