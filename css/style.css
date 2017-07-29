@@ -14,3 +14,7 @@ body {
 .addAnimal {
   border: solid 2px blue;
 }
+
+.animalGif {
+  float: left;
+}
