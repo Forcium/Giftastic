@@ -57,10 +57,12 @@ function getAnimalGifs() {
         newDiv.append(rating);      //~~~~~~~~~~~~~~~~appended rating on JS but not yet into html
 
         var newImages = $("<img>");
-        newImages.attr("src", results[i].images.fixed_height_still.url);
-        newImages.attr("data-still", results[i].images.fixed_height_still.url);
-        newImages.attr("data-animate", results[i].images.fixed_height.url);
-        newImages.attr("data-state", "still");
+        newImages.addClass("gify");
+        newImages.addClass("img-responsive");
+        newImages.attr("src", results[i].images.fixed_height_still.url);  // image url
+        newImages.attr("data-still", results[i].images.fixed_height_still.url);   //still image url
+        newImages.attr("data-animate", results[i].images.fixed_height.url);   //animated image url
+        newImages.attr("data-state", "still");    // put this here due to undefined on first click???
         newDiv.append(newImages);        //~~~~~~~~~~~~~~~~~~append images to newDiv, still not html
 
         $("#gifThumbs").append(newDiv);   //~~~~~~~~~~~~~~NOW appending to html
@@ -68,25 +70,25 @@ function getAnimalGifs() {
     });
 }
 
-function animateGif() {
+function animateGif() {             //~~~~~~~~~~~~~~animate gif function
   var state = $(this).attr("data-state");
-
-  if (state === "still") {
+          console.log(state);
+  if (state === "still") {      //~~~~~~~~~~~~if gif is still image switch to animated attr
     console.log(state);
     $(this).attr("src", $(this).attr("data-animate"));
     $(this).attr("data-state", "animate");
     console.log(this);
   }
-  else {
+  if (state !== "still") {      //~~~~~~~~~~~~if gif is animated image switch to still attr
     $(this).attr("src", $(this).attr("data-still"));
     $(this).attr("data-state", "still");
   }
 }
 
-
 $(document).ready(function() {
   renderButtons();
 });
 
+//all clicks will be processed after the full document has loaded??
 $(document).on("click", ".animalButton", getAnimalGifs);
-$(document).on("click", ".animalGif", animateGif);
+$(document).on("click", ".gify", animateGif);
