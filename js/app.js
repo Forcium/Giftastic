@@ -40,7 +40,7 @@ $("#animalSubmit").on("click", function(event) {     //user inputs a NEW animal
 function getAnimalGifs() {
   var addAttribute = $(this).attr("animal-data");
 
-  var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + addAttribute + "&api_key=d5589f089013444f8a5f800650fbf5a9&limit=10";
+  var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + addAttribute + "&api_key=d5589f089013444f8a5f800650fbf5a9&limit=10";
 
   $.ajax({          //~~~~~~~~~~~~~~~~~~~~~~~~~AJAX calling to Giphy API
       method: "GET",
