@@ -1,4 +1,5 @@
 
+//Once html has loaded, display buttons
 $(document).ready(function() {
   renderButtons();
 });
